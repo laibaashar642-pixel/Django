@@ -3,4 +3,103 @@
 {% block body %}
 
 
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f9ff;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Image styling */
+    .container-fluid img {
+        object-fit: cover;
+        height: 400px;
+        width: 100%;
+        filter: brightness(80%);
+    }
+
+    /* Heading styling */
+    h1.text-center {
+        margin-top: 20px;
+        font-size: 2.5rem;
+        color: #004080;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    /* Form container */
+    form {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 25px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Labels */
+    .form-label {
+        font-weight: 600;
+        color: #333;
+    }
+
+    /* Input fields */
+    .form-control {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 10px;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #004080;
+        box-shadow: 0 0 8px rgba(0, 64, 128, 0.3);
+    }
+
+    /* Checkbox */
+    .form-check-label {
+        color: #555;
+    }
+
+    /* Button */
+    .btn-primary {
+        background-color: #004080;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #0066cc;
+    }
+</style>
+<div class="container-fluid px-0">
+    <img src="https://thumbs.dreamstime.com/b/sea-water-ocean-wave-surfing-surface-colorful-vibrant-sunset-barrel-shape-124362369.jpg"
+        class="d-block w-100 mx-0" alt="Contact Us Image" height="1400px" width="1400px">
+</div>
+<div class="container">
+    <h1 class="text-center">Contact Us</h1>
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label">Email Address</label>
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
 {% endblock body %}
