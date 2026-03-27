@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+<!--{% extends 'base.html' %}
 {% block title %}Contact Us{% endblock title %}
 {% block body %}
 
@@ -102,4 +102,120 @@
     </form>
 </div>
 
+{% endblock body %}
+-->
+{% extends 'base.html' %}
+{% block title %}Contact Us{% endblock title %}
+{% block body %}
+
+<style>
+  /* General page styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Heading */
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.form-label {
+    font-weight: 600;
+    color: #444;
+}
+
+/* Inputs */
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 8px rgba(0,123,255,0.3);
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+}
+
+/* Checkbox */
+.form-check-label {
+    color: #555;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Image styling */
+.container-fluid img {
+    object-fit: cover;
+    height: 400px;
+    width: 100%;
+    border-bottom: 5px solid #007bff;
+}
+</style>
+<div class="container-fluid px-0">
+    <img src="https://thumbs.dreamstime.com/b/sea-water-ocean-wave-surfing-surface-colorful-vibrant-sunset-barrel-shape-124362369.jpg"
+        class="d-block w-100 mx-0" alt="Contact Us Image" height="1400px" width="1400px">
+</div>
+<div class="container">
+    <h1 class="text-center">Contact Us</h1>
+    <form method="post"action="/contact/"> 
+        {% csrf_token %}
+        
+        <!--so action tell how can we handle it so we handle it with views and post method is used to store the data in datatbase-->
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name"name="name" aria-describedby="Enter your name">
+            <div id="Email" class="form-text"> Email Address</div>
+            <input type="text" class="form-control" id="email"name="email" aria-describedby="Enter your email address">
+        </div>
+        <div class="mb-3">
+        
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="phone" name="phone" aria-describedby="Enter your phone number">
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Tell me about what you contact for me....</label>
+            <textarea class="form-control" id="desc" name="desc"rows="1"></textarea>
+
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 {% endblock body %}
